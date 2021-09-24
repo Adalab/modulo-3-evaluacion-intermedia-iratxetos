@@ -1,21 +1,23 @@
 .club {
     &__list {
       display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
+      flex-direction: column;
+      
+      
     }
   
     &__item {
       margin-bottom: 1rem;
       padding: 1rem;
-      width: 20rem;
+      width: 100%;
       list-style: none;
-      border-radius: 0.5rem;
+      border-radius: 1rem;
       border: 1px solid #ddd;
-      background-color: #a349a4;
+      background-color: #49a46c;
       box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
       font-weight: bold;
       color: #fff;
+      
   
       & > * {
         margin: 3px 0;
@@ -35,25 +37,49 @@
   }
 
   .new-club {
+    &__form {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 1rem;
+      padding: 1rem;
+      width: 100%;
+      list-style: none;
+      border-radius: 1rem;
+      border: 1px solid #49a46c;
+      background-color: #ddd;
+      box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  }
     &__title {
-      padding: 3rem 0 1rem 0;
+      padding-bottom:1rem;
       font-size: 1.5rem;
-      color: #a349a4;
+      color: #49a46c;
     }
   
+    &__label{
+      font-weight: bold;
+      width: 100%;
+      display: flex;
+      padding-bottom: 0.5rem;  
+      align-items: center;
+      text-align: center;
+            
+  }
+
     &__input {
+      margin-left: 1rem;
       margin-right: 1rem;
       margin-bottom: 1rem;
       padding: 0.5rem;
-      width: 10rem;
+      width: 15rem;
       border: 2px solid #ddd;
       border-radius: 0.5rem;
       background-color: #f8f8f8;
       outline: none;
       transition: all ease 0.3s;
+     
   
       &:focus {
-        border-color: #a349a4;
+        border-color: #49a46c;
         background-color: #fff;
         box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
       }
@@ -61,18 +87,20 @@
   
     &__btn {
       padding: 0.5rem 1.5rem;
+      width: 10rem;
       border-radius: 0.5rem;
       border: none;
-      border: 2px solid #a349a4;
-      background-color: #a349a4;
+      border: 2px solid #49a46c;
+      background-color: #49a46c;
       font-weight: bold;
       color: #fff;
       cursor: pointer;
+      text-justify: initial;
       transition: all ease 0.3s;
   
       &:hover {
-        border-color: #a349a4;
-        background-color: #a349a4;
+        border-color: #49a46c;
+        background-color: #49a46c;
       }
     }
   }

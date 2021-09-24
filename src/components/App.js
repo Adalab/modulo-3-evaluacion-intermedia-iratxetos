@@ -19,10 +19,10 @@ function App() {
         {oneClub.name}
       </p>
       <p className='club__weekdays'>
-        {`Abierto entre semana:${oneClub.openOnWeekdays}`}
+        {`Abierto entre semana: ${oneClub.openOnWeekdays}`}
       </p>
       <p className='club__weekend'>
-        {`Abierto el fin de semana:${oneClub.openOnWeekend}`}
+        {`Abierto el fin de semana: ${oneClub.openOnWeekend}`}
       </p>
     </li>
   ));
@@ -61,31 +61,38 @@ function App() {
         {/* new club */}
         <form className='new-club__form'>
           <h2 className='new-club__title'>Añadir un nuevo club</h2>
-          <input
-            className='new-club__input'
-            type='text'
-            name='name'
-            id='name'
-            placeholder='Pepino'
-            onChange={handleChangeNewClub}
-            value={newClub.name}
-          />
-          <input
-            className='new-club__input'
-            type='checkbox'
-            name='openOnWeekdays'
-            id='openOnWeekdays'
-            onChange={handleChangeNewClub}
-            value={newClub.openOnWeekdays}
-          />
-          <input
-            className='new-club__input'
-            type='checkbox'
-            name='openOnWeekend'
-            id='openOnWeekend'
-            onChange={handleChangeNewClub}
-            value={newClub.openOnWeekend}
-          />
+          <label className='new-club__label'>
+            Nombre del club
+            <input
+              className='new-club__input'
+              type='text'
+              name='name'
+              id='name'
+              placeholder='Pepino'
+              onChange={handleChangeNewClub}
+              value={newClub.name}
+            />
+          </label>
+          <label className='new-club__label'> ¿Abre entre semana?
+            <input
+              className='new-club__input'
+              type='checkbox'
+              name='openOnWeekdays'
+              id='openOnWeekdays'
+              onChange={handleChangeNewClub}
+              value={newClub.openOnWeekdays}
+            />
+          </label>
+          <label className='new-club__label'>¿Abre los fines de semana?
+            <input
+              className='new-club__input'
+              type='checkbox'
+              name='openOnWeekend'
+              id='openOnWeekend'
+              onChange={handleChangeNewClub}
+              value={newClub.openOnWeekend}
+            />
+          </label>
           <input
             className='new-club__btn'
             type='submit'
