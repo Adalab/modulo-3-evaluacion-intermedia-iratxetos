@@ -24,6 +24,7 @@ function App() {
       <p className='club__weekend'>
         {`Abierto el fin de semana: ${oneClub.openOnWeekend}`}
       </p>
+
     </li>
   ));
 
@@ -45,7 +46,6 @@ function App() {
       openOnWeekend: '',
     });
   };
-
 
   return (
     <div className='page'>
@@ -80,7 +80,7 @@ function App() {
               name='openOnWeekdays'
               id='openOnWeekdays'
               onChange={handleChangeNewClub}
-              value={newClub.openOnWeekdays}
+              value={newClub.openOnWeekdays = true}
             />
           </label>
           <label className='new-club__label'>¿Abre los fines de semana?
@@ -90,7 +90,7 @@ function App() {
               name='openOnWeekend'
               id='openOnWeekend'
               onChange={handleChangeNewClub}
-              value={newClub.openOnWeekend}
+              value={newClub.openOnWeekend = true}
             />
           </label>
           <input
