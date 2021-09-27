@@ -13,11 +13,12 @@ function App() {
     }
   );
 
+  //BUSCADOR SELECT
   const handleSearchClub = (ev) => {
     setSearch(ev.target.value);
-
   };
 
+  //CREACIÓN DE NUEVO CLUB EN EL LISTADO
   const handleChangeNewClub = (ev) => {
     const elementIdChanged = (ev.currentTarget.id);
     const elementValueChanged = (ev.currentTarget.value);
@@ -27,6 +28,7 @@ function App() {
     });
   };
 
+  //
   const handleClick = (ev) => {
     ev.preventDefault();
     setData([...data, newClub]);
@@ -37,17 +39,21 @@ function App() {
     });
   };
 
+  //BORRAR CLUB
   const handleDeleteClub = (ev) => {
-    const deletedClub = ev.currenTarget.id;
-    const newData = data.splice(deletedClub, 1);
-    setData([...newData]);
+    const deletedClub = parseInt(ev.target.id);
+    const deletedClubPosition = data.findIndex((club) => { return deletedClub === club.id });
+    console.log(deletedClubPosition);
+    data.splice(deletedClubPosition, 1);
+    setData([...data]);
 
   };
 
+  //
   const renderClubList = () => {
     return data
       .filter((data) => {
-        if (searchClub === 'openOnWeekDays') {
+        if (searchClub === 'openOnWeekdays') {
           return data.openOnWeekdays === true;
         } else if (searchClub === 'openOnWeekend') {
           return data.openOnWeekend === true;
@@ -57,7 +63,7 @@ function App() {
 
       .map((club, index) => (
         <li className='club__item' key={index}>
-          <div className='club__section' onClick={handleDeleteClub}>
+          <div className='club__section'>
             <p className='club__name'>
               #{index} {club.name}
             </p>
@@ -68,9 +74,8 @@ function App() {
               {`Abierto el fin de semana: ${club.openOnWeekend ? 'Si' : 'No'}`}
             </p>
           </div>
-          <div className='club__delete'>
-            <p className='club__delete--cross' onClick={handleDeleteClub}>X</p>
-          </div>
+          <button className='club__delete--cross' id={club.id} onClick={handleDeleteClub}>X</button>
+
         </li>
       ));
   };
