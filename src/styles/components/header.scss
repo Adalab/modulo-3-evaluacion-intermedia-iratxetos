@@ -1,28 +1,35 @@
 .header {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    margin-bottom: 2rem;
     padding-bottom: 0.5rem;
-    border-bottom: 1px solid #eee;
+
+    @include tablet {
+      flex-direction: row;
+      justify-content: space-between;    
+    }
   
     &__title {
-      font-size: 1.5rem;
+      font-size: 2rem;
       color: #49a46c;
+      padding: 0.5rem;
     }
   
     &__search {
-      padding: 0.5rem;
-      width: 20rem;
       border: 2px solid #ddd;
       border-radius: 0.5rem;
       background-color: #f8f8f8;
-      outline: none;
+      margin: 0.5rem 2rem;
+      padding: 3px;
       transition: all ease 0.3s;
   
       &:focus {
         border-color: #49a46c;
         background-color: #fff;
+      }
+
+      @include tablet {
+        margin-right: 0;
       }
     }
   }

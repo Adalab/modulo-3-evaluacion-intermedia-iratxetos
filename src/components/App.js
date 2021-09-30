@@ -28,7 +28,7 @@ function App() {
     });
   };
 
-  //
+  //TOMA LOS VALORES DEL NUEVO CLUB
   const handleClick = (ev) => {
     ev.preventDefault();
     setData([...data, newClub]);
@@ -46,10 +46,9 @@ function App() {
     console.log(deletedClubPosition);
     data.splice(deletedClubPosition, 1);
     setData([...data]);
-
   };
 
-  //
+  //MUESTRA LA LISTA DE CLUBS FILTRADA
   const renderClubList = () => {
     return data
       .filter((data) => {
@@ -74,21 +73,21 @@ function App() {
               {`Abierto el fin de semana: ${club.openOnWeekend ? 'Si' : 'No'}`}
             </p>
           </div>
-          <button className='club__delete--cross' id={club.id} onClick={handleDeleteClub}>X</button>
-
+          <button className='club__delete' id={club.id} onClick={handleDeleteClub}>X</button>
         </li>
       ));
   };
 
 
-
+  //PINTAMOS EL HTML DE LA FUNCIÓN
   return (
     <div className='page'>
+
       {/* header */}
       <header className='header'>
         <h1 className='header__title'>Mis clubs</h1>
         <form action="">
-          <select onChange={handleSearchClub}>
+          <select className='header__search' onChange={handleSearchClub}>
             <option value="all">Todos</option>
             <option value="openOnWeekdays">Los que abren entre semana</option>
             <option value="openOnWeekend">Lo que abren fines de semana</option>
@@ -110,7 +109,7 @@ function App() {
               type='text'
               name='name'
               id='name'
-              placeholder='Pepino'
+              placeholder='Escribe el nombre'
               onChange={handleChangeNewClub}
               value={newClub.name}
             />
@@ -143,7 +142,10 @@ function App() {
           />
         </form>
       </main>
-    </div>
+      <footer>
+        <small className="copy"> Evaluación Intermedia React <span className='authorName'>Iratxe Martin</span> &copy; 2021 </small>
+      </footer >
+    </div >
   );
 
 }

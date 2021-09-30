@@ -2,13 +2,12 @@
     &__list {
       display: flex;
       flex-direction: column;
-      
       }
   
     &__item {
       margin-bottom: 1rem;
       padding: 1rem;
-      width: 100%;
+      width:100%;
       list-style: none;
       border-radius: 1rem;
       border: 1px solid #ddd;
@@ -19,41 +18,43 @@
       display: flex;
       flex-direction: row;
       justify-content: space-between;
-      
-  
-      & > * {
-        margin: 3px 0;
-      }
+        
+       & > * {
+         margin: 3px 0;
+       }
     }
   
     &__label {
       display: inline-block;
       font-weight: normal;
-      width: 5rem;
+      //width: 5rem;
       color: #fff;
     }
   
     &__name {
       font-weight: bold;
+      font-size: x-large;
+      &:hover{
+        color:#444;
+      }
     }
 
     &__delete{
-      background-color: rgb(167, 175, 159);
+      background-color: #49a46c;
+      border: solid white;
       border-radius: 2rem;
+      color:white;
+      font-weight: bolder;
       width: 30px;
       height: 30px;
       display: flex;
       justify-content: center;
       align-items: center;
       cursor: pointer;
+        &:hover{
+        background-color: white;color: #49a46c;
+        }
     
-    &__delete--cross{
-      font-weight: bolder;
-      color: #ddd;
-      width: 30px;
-      height: 30px;
-      
-    }
   }
   }
 
@@ -79,48 +80,51 @@
   
     &__label{
       font-weight: bold;
-      width: 100%;
       display: flex;
       padding: 0.5rem 0;  
       justify-content: flex-start;
       align-items: center; 
         
-  
 
-    &--input {
-      border: 2px solid #ddd;
-      border-radius: 0.5rem;
-      background-color: #f8f8f8;
-      margin: 0.5rem 2rem;
-      padding: 3px;
-      transition: all ease 0.3s;
+       &--input {
+       border: 2px solid #ddd;
+       border-radius: 0.5rem;
+       background-color: #f8f8f8;
+       margin: 0.5rem 1rem;
+       padding: 3px;
+       transition: all ease 0.3s;
           
   
-      &:focus {
-        border-color: #49a46c;
-        background-color: #fff;
-        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-      }
+       &:focus {
+         border-color: #49a46c;
+         background-color: #fff;
+         box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+       }
+       
+     
     }
+    
+    
   }
   
     &__btn {
       padding: 0.5rem 1.5rem;
-      width: 10rem;
+      width: 100%;
       border-radius: 0.5rem;
-      border: none;
       border: 2px solid #49a46c;
       background-color: #49a46c;
       font-weight: bold;
       color: #fff;
       cursor: pointer;
-      text-justify: initial;
       transition: all ease 0.3s;
-  
-      &:hover {
+
+        &:hover {
         border-color: #49a46c;
         background-color: #49a46c;
       }
+      @include tablet {
+        width: 30%;    }
+    
     }
   }
   
