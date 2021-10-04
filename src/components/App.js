@@ -8,8 +8,8 @@ function App() {
   const [newClub, setNewClub] = useState(
     {
       name: '',
-      openOnWeekdays: '',
-      openOnWeekend: '',
+      openOnWeekdays: false,
+      openOnWeekend: false,
     }
   );
 
@@ -34,8 +34,8 @@ function App() {
     setData([...data, newClub]);
     setNewClub({
       name: '',
-      openOnWeekdays: '',
-      openOnWeekend: '',
+      openOnWeekdays: false,
+      openOnWeekend: false,
     });
   };
 
