@@ -37,6 +37,11 @@
       &:hover{
         color:#444;
       }
+
+      
+@include smallScreen {
+  font-size: small;
+}
     }
 
     &__delete{
@@ -76,6 +81,10 @@
       padding-bottom:1rem;
       font-size: 1.5rem;
       color: #49a46c;
+
+      @include smallScreen {
+        font-size: small;
+      }
     }
   
     &__label{
@@ -94,6 +103,10 @@
        padding: 3px;
        transition: all ease 0.3s;
           
+       @include smallScreen {
+        width: 50%;
+      }
+    }
   
        &:focus {
          border-color: #49a46c;
@@ -105,7 +118,7 @@
     }
     
     
-  }
+  
   
     &__btn {
       padding: 0.5rem 1.5rem;
