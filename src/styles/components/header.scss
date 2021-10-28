@@ -11,21 +11,22 @@
   
     &__title {
       font-size: 2rem;
-      color: #49a46c;
+      color: var(--theme-page-title);
       padding: 0.5rem;
     }
   
     &__search {
-      border: 2px solid #ddd;
+      border: 2px solid var(--theme-input-border);
       border-radius: 0.5rem;
-      background-color: #f8f8f8;
+      background-color: var(--theme-input-background);
       margin: 0.5rem 2rem;
       padding: 3px;
       transition: all ease 0.3s;
+      color: var(--theme-card-text);
   
       &:focus {
-        border-color: #49a46c;
-        background-color: #fff;
+        border-color: var(--theme-page-title);
+        background-color: var(--theme-buttom-background);
       }
 
       @include tablet {

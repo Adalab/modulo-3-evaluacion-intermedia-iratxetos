@@ -12,6 +12,19 @@ function App() {
       openOnWeekend: false,
     }
   );
+  const [theme, setTheme] = useState('light');
+  const [activate, setActiveMode] = useState('');
+
+  //SWITCH
+  const handleSwitch = (ev) => {
+    if (activate === '') {
+      setTheme('dark');
+      setActiveMode('active');
+    } else {
+      setTheme('light');
+      setActiveMode('');
+    };
+  }
 
   //BUSCADOR SELECT
   const handleSearchClub = (ev) => {
@@ -61,19 +74,19 @@ function App() {
       })
 
       .map((club, index) => (
-        <li className='club__item' key={index}>
-          <div className='club__section'>
-            <p className='club__name'>
+        <li className={`club__item ${theme}`} key={index}>
+          <div className={`club__section ${theme}`}>
+            <p className={`club__name ${theme}`}>
               #{index} {club.name}
             </p>
-            <p className='club__weekdays'>
+            <p className={`club__weekdays ${theme}`}>
               {`Abierto entre semana: ${club.openOnWeekdays ? 'Si' : 'No'}`}
             </p>
-            <p className='club__weekend'>
+            <p className={`club__weekend ${theme}`}>
               {`Abierto el fin de semana: ${club.openOnWeekend ? 'Si' : 'No'}`}
             </p>
           </div>
-          <button className='club__delete' id={club.id} onClick={handleDeleteClub}>X</button>
+          <button className={`club__delete ${theme}`} id={club.id} onClick={handleDeleteClub}>X</button>
         </li>
       ));
   };
@@ -81,13 +94,19 @@ function App() {
 
   //PINTAMOS EL HTML DE LA FUNCIÓN
   return (
-    <div className='page'>
+    <div className={`page  ${theme}`}>
 
       {/* header */}
       <header className='header'>
-        <h1 className='header__title'>Mis clubs</h1>
+        <h1 className={`header__title  ${theme}`}>Mis clubs</h1>
+
+        <button className={`switch ${activate}`} id='switch' onClick={handleSwitch} >
+          <span><i class='fas fa-moon'></i></span>
+          <span><i class="fas fa-sun"></i></span>
+        </button>
+
         <form action="">
-          <select className='header__search' onChange={handleSearchClub}>
+          <select className={`header__search  ${theme}`} onChange={handleSearchClub}>
             <option value="all">Todos</option>
             <option value="openOnWeekdays">Los que abren entre semana</option>
             <option value="openOnWeekend">Lo que abren fines de semana</option>
@@ -100,12 +119,12 @@ function App() {
         <ul className='club__list'>{renderClubList()}</ul>
 
         {/* new club */}
-        <form className='new-club__form'>
-          <h2 className='new-club__title'>Añadir un nuevo club</h2>
-          <label className='new-club__label'>
+        <form className={`new-club__form ${theme}`} >
+          <h2 className={`new-club__title ${theme}`}>Añadir un nuevo club</h2>
+          <label className={`new-club__label ${theme}`}>
             Nombre del club
             <input
-              className='new-club__label--input'
+              className={`new-club__label--input ${theme}`}
               type='text'
               name='name'
               id='name'
@@ -114,9 +133,9 @@ function App() {
               value={newClub.name}
             />
           </label>
-          <label className='new-club__label'> ¿Abre entre semana?
+          <label className={`new-club__label ${theme}`}> ¿Abre entre semana?
             <input
-              className='new-club__label--input'
+              className={`new-club__label--input ${theme}`}
               type='checkbox'
               name='openOnWeekdays'
               id='openOnWeekdays'
@@ -124,9 +143,9 @@ function App() {
               checked={newClub.openOnWeekdays}
             />
           </label>
-          <label className='new-club__label'>¿Abre los fines de semana?
+          <label className={`new-club__label ${theme}`}>¿Abre los fines de semana?
             <input
-              className='new-club__label--input'
+              className={`new-club__label--input ${theme}`}
               type='checkbox'
               name='openOnWeekend'
               id='openOnWeekend'
@@ -135,7 +154,7 @@ function App() {
             />
           </label>
           <input
-            className='new-club__btn'
+            className={`new-club__btn ${theme}`}
             type='submit'
             value='Añadir'
             onClick={handleClick}

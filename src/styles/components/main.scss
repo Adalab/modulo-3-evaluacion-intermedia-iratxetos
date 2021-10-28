@@ -10,11 +10,11 @@
       width:100%;
       list-style: none;
       border-radius: 1rem;
-      border: 1px solid #ddd;
-      background-color: #49a46c;
+      border: 1px solid var(--theme-card-title);
+      background-color: var(--theme-card-background);
       box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
       font-weight: bold;
-      color: #fff;
+      color: var(--theme-card-text);
       display: flex;
       flex-direction: row;
       justify-content: space-between;
@@ -22,6 +22,9 @@
        & > * {
          margin: 3px 0;
        }
+
+       &:hover{
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 5px 10px 5px;} 
     }
   
     &__label {
@@ -35,20 +38,19 @@
       font-weight: bold;
       font-size: x-large;
       &:hover{
-        color:#444;
+        color:var(--theme-newCard-background);
       }
-
       
-@include smallScreen {
-  font-size: small;
-}
+      @include smallScreen {
+      font-size: small;
+      }
     }
 
-    &__delete{
-      background-color: #49a46c;
-      border: solid white;
+      &__delete{
+      background-color: var(--theme-buttom-background);
+      border: solid var(--theme-border);
       border-radius: 2rem;
-      color:white;
+      color: var(--theme-newCard-text);
       font-weight: bolder;
       width: 30px;
       height: 30px;
@@ -57,12 +59,16 @@
       align-items: center;
       cursor: pointer;
         &:hover{
-        background-color: white;color: #49a46c;
+          border-color: var(--theme-newCard-background);
+          background-color: var(--theme-newCard-text);
+          color: var(--theme-card-title);
         }
     
   }
-  }
+  
 
+  
+}
   .new-club {
     &__form {
       display: flex;
@@ -72,15 +78,15 @@
       width: 100%;
       list-style: none;
       border-radius: 1rem;
-      border: 1px solid #49a46c;
-      background-color: #ddd;
+      border: 1px solid var(--theme-card-title);
+      background-color: var(--theme-newCard-background);
       box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   }
   
     &__title {
       padding-bottom:1rem;
       font-size: 1.5rem;
-      color: #49a46c;
+      color: var(--theme-newCard-title);
 
       @include smallScreen {
         font-size: small;
@@ -96,9 +102,9 @@
         
 
        &--input {
-       border: 2px solid #ddd;
+       border: 2px solid var(--theme-input-border);
        border-radius: 0.5rem;
-       background-color: #f8f8f8;
+       background-color: var(--theme-input-background);
        margin: 0.5rem 1rem;
        padding: 3px;
        transition: all ease 0.3s;
@@ -109,31 +115,29 @@
     }
   
        &:focus {
-         border-color: #49a46c;
-         background-color: #fff;
+         border-color: var(--theme-card-title);
+         background-color: var(--theme-card-title);
          box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
        }
        
      
     }
     
-    
-  
-  
-    &__btn {
+      &__btn {
       padding: 0.5rem 1.5rem;
       width: 100%;
       border-radius: 0.5rem;
-      border: 2px solid #49a46c;
-      background-color: #49a46c;
+      border: 2px solid var(--theme-border);
+      background-color: var(--theme-buttom-background);
       font-weight: bold;
-      color: #fff;
+      color: var(--theme-newCard-text);
       cursor: pointer;
       transition: all ease 0.3s;
 
         &:hover {
-        border-color: #49a46c;
-        background-color: #49a46c;
+        border-color: var(--theme-newCard-background);
+        background-color: var(--theme-newCard-text);
+        color: var(--theme-card-title);
       }
       @include tablet {
         width: 30%;    }

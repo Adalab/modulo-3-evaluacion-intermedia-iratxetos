@@ -1,0 +1,45 @@
+
+
+.light {
+    --theme-page-background: #FFF;
+    --theme-page-title: #c8b6ff;
+
+    --theme-card-background:#ffd6ff;
+    --theme-card-title: #b8c0ff;
+    --theme-card-text: #1e1e24;
+
+    --theme-newCard-background:#c8b6ff;
+    --theme-newCard-title: #1e1e24;
+    --theme-newCard-text: #1e1e24;
+
+    --theme-buttom-background: #e7c6ff;
+    --theme-buttom-border:#c8b6ff;
+    --theme-border: white;
+
+    --theme-input-background: #ffd6ff;
+    --theme-input-border: #e7c6ff;
+    --theme-input-text: #1e1e24;
+
+
+}
+
+.dark {
+    --theme-page-background: #1e1e24;
+    --theme-page-title: #c8b6ff;
+
+    --theme-card-background:#3f3f4d;
+    --theme-card-title: #b8c0ff;
+    --theme-card-text:#e7c6ff ;
+
+    --theme-newCard-background:#3f3f4d;
+    --theme-newCard-title: #b8c0ff;
+    --theme-newCard-text: #3f3f4d;
+
+    --theme-buttom-background: #e7c6ff;
+    --theme-buttom-border:#c8b6ff;
+    --theme-border: white;
+
+    --theme-input-background: #1e1e24;
+    --theme-input-border: #e7c6ff;
+    --theme-input-text: #c8b6ff;
+}
