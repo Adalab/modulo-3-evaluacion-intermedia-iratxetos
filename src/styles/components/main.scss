@@ -99,6 +99,7 @@
       padding: 0.5rem 0;  
       justify-content: flex-start;
       align-items: center; 
+      color: var(--theme-newCard-title);
         
 
        &--input {
@@ -108,6 +109,9 @@
        margin: 0.5rem 1rem;
        padding: 3px;
        transition: all ease 0.3s;
+        &::placeholder{
+         color: var(--theme-card-text);
+       }
           
        @include smallScreen {
         width: 50%;
